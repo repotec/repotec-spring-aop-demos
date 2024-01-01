@@ -13,10 +13,17 @@ public class CustomAfterThrowingAdvice {
 	
     private final static Logger logger = Logger.getLogger(CustomAfterThrowingAdvice.class.getName());
 
-    @AfterThrowing(pointcut = "execution(public * *.getStudentByFirstName(..))", throwing = "exception")
-	public void LogBeforeAnyGetStudent(JoinPoint joinPoint, Exception exception) {
-    	logger.info(joinPoint.getSignature().toLongString());
-    	exception.printStackTrace();
+    @AfterThrowing(pointcut = "execution(public * *.getStudentByFirstName(..))", throwing = "ex")
+	public void LogBeforeAnyGetStudent(JoinPoint joinPoint, Exception ex) {
+		String methodName = joinPoint.getSignature().getName();
+		Object[] args = joinPoint.getArgs();
+    	logger.severe(ex.getMessage());
+		//logger.error("Exception occurred in method: " + methodName);
+		//logger.error("Method arguments: " + Arrays.toString(args));
+		//logger.error("Exception message: " + ex.getMessage());
+		//logger.error("Exception stack trace: ", ex);
+
+    	ex.printStackTrace();
 		logger.info("log after throw exception for any method with name getStudentByFirstName");
 	}
 	

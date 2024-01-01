@@ -30,18 +30,26 @@ public class AfterReturningAdviceTest {
     }
 	
 	@Test
-    public void BeforeAdviceAnyGetStudentByFirstName_test() {
+    public void beforeAdviceAnyGetStudentByFirstName_test() {
+		StudentService studentService = context.getBean("studentService", StudentService.class);
+
+		Student student = studentService.getStudentByFirstName("ahmed");
+		assertNotNull(student);
+    }
+
+	@Test
+	public void beforeAdviceWithExceptionAnyGetStudentByFirstName_test() {
 		StudentService studentService = context.getBean("studentService", StudentService.class);
 
 		Student student = studentService.getStudentByFirstName(null);
 		assertNotNull(student);
-    }
+	}
 	
 	@Test
-    public void BeforeAdviceAnyLogBeforeAnyArrayOfStudents_test() {
+    public void beforeAdviceAnyLogBeforeAnyArrayOfStudents_test() {
 		StudentService studentService = context.getBean("studentService", StudentService.class);
 
-		List<Student> student = studentService.findAllStudens();
+		List<Student> student = studentService.findAllStudents();
 		assertNotNull(student);
     }
 }

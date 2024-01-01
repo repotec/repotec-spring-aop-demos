@@ -16,7 +16,7 @@ public class CustomAfterReturningAdvice {
     /**
      * with void nothing will happen
      * @param joinPoint
-     * @param returnValuew
+     * @param returnValue
      */
     @AfterReturning(pointcut = "execution(public !void *.save(..))", returning = "returnValue")
 	public void LogBeforeAnySaveStudent(JoinPoint joinPoint, Object returnValue) {
@@ -25,21 +25,35 @@ public class CustomAfterReturningAdvice {
 	}
 	
     @AfterReturning(pointcut = "execution(java.util.List<com.spring.aop.model.Student> *.*())", returning = "returnValue")
-	public void LogBeforeAnyArrayOfStudents(Object returnValue) {
+	public void LogAfterReturningAnyArrayOfStudents(Object returnValue) {
     	logger.info(returnValue.toString());
 		logger.info("log before any method returns List of studens");
 	}
-	
+
+	/**
+	 * AfterReturning without joinPoint
+	 * @param returnValue
+	 */
     @AfterReturning(pointcut = "execution(java.util.List<com.spring.aop.model.Student> *.*())", returning = "returnValue")
-	public void LogBeforeAnyArrayOfStudentsWithJoinPoint(JoinPoint joinPoint, Object returnValue) {
+	public void LogAfterReturningAnyArrayOfStudentsd2(Object returnValue) {
     	logger.info(returnValue.toString());
-		logger.info("log before any method returns List of studens " + joinPoint.getSignature().toString());
+		logger.info("log before any method returns List of students ");
 	}
-	
-    @AfterReturning(pointcut = "execution(java.util.List<com.spring.aop.model.Student> *.*())", returning = "returnValue")
-	public void LogBeforeAnyArrayOfStudentsd2(Object returnValue) {
-    	logger.info(returnValue.toString());
-		logger.info("log before any method returns List of studens ");
+
+	/**
+	 * AfterReturning with joinPoint and returned value
+	 * @param returnValue
+	 */
+	@AfterReturning(pointcut = "execution(java.util.List<com.spring.aop.model.Student> *.*())", returning = "returnValue")
+	public void LogAfterReturningAnyArrayOfStudentsWithJoinPoint(JoinPoint joinPoint, Object returnValue) {
+		logger.info(returnValue.toString());
+		logger.info("log before any method returns List of students " + joinPoint.getSignature().toString());
+	}
+
+	@AfterReturning(pointcut = "execution(java.util.List<com.spring.aop.model.Student> *.*())", returning = "returnValue")
+	public void LogAfterReturningAnyArrayOfStudentsWithJoinPoint(Object returnValue) {
+		logger.info(returnValue.toString());
+		logger.info("log after returning | any method returns List of students | list should named as students ");
 	}
 	
 }

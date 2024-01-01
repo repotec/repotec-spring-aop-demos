@@ -10,7 +10,7 @@ import com.spring.aop.model.Student;
 public interface StudentRepository {
 	public List<Student> getAllStudent(String name);
 	public Student getStudentByFirstName(String name);
-	public void save(Student student);
+	public Student save(Student student);
 	public Student delete(Student student);
 	public List<Student> findAllStudents();
 }

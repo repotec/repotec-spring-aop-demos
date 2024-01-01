@@ -8,10 +8,6 @@
 	<version>0.0.1</version>
 	<packaging>pom</packaging>
 	<name>spring-aop-demos</name>
-	<properties>
-		<maven.compiler.source>11</maven.compiler.source>
-		<maven.compiler.target>11</maven.compiler.target>
-	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework</groupId>
@@ -36,10 +32,12 @@
 	</dependencies>
 	<modules>
 		<module>before-advice</module>
-		<module>after-finaly-advice</module>
+		<module>after-advice</module>
 		<module>around-advice</module>
 		<module>after-throwing-advice</module>
 		<module>after-returning-advice</module>
 		<module>within-annotation-pointcut</module>
+		<module>within-pointcut</module>
+		<module>target-pointcut</module>
 	</modules>
 </project>

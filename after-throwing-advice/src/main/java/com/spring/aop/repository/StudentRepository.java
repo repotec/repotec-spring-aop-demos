@@ -8,9 +8,8 @@ import com.spring.aop.model.Student;
 
 @Component
 public interface StudentRepository {
-	public List<Student> getAllStudent(String name);
-	public Student getStudentByFirstName(String name);
-	public void save(Student student);
-	public Student delete(Student student);
-	public List<Student> findAllStudents();
+	Student getStudentByFirstName(String name);
+	void save(Student student);
+	Student delete(Student student);
+	List<Student> findAllStudents();
 }
