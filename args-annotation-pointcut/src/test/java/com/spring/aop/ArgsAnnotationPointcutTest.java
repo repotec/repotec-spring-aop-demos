@@ -15,7 +15,7 @@ import com.spring.aop.model.Student;
 import com.spring.aop.service.StudentService;
 
 @TestInstance(Lifecycle.PER_CLASS)
-public class AroundAdviceTest {
+public class ArgsAnnotationPointcutTest {
 	AnnotationConfigApplicationContext context = null;
 	
 	@BeforeAll
@@ -28,26 +28,11 @@ public class AroundAdviceTest {
 		if(context != null)
 			context.close();
     }
+
 	
 	@Test
-    public void BeforeAdviceAnyGetStudentByFirstName_test() {
+    public void BeforeAdviceAnyLogBeforeAnyArrayOfStudents_test() {
 		StudentService studentService = context.getBean("studentService", StudentService.class);
-
-		Student student = studentService.getStudentByFirstName("test");
-		assertNotNull(student);
+		studentService.save(new Student(1,"test", "test", 20));
     }
-	
-	@Test
-    public void BeforeAdviceLogBeforeAnyArrayOfStudents_test() {
-		StudentService studentService = context.getBean("studentService", StudentService.class);
-
-		List<Student> student = studentService.findAllStudents();
-		assertNotNull(student);
-    }
-
-	@Test
-	public void BeforeAdviceJoinPointException_test() {
-		StudentService studentService = context.getBean("studentService", StudentService.class);
-		studentService.delete(new Student(0, "test", "test", 22));
-	}
 }

@@ -17,8 +17,14 @@ public class CustomAfterAdvice {
     private final static Logger logger = Logger.getLogger(CustomAfterAdvice.class.getName());
 
     @After("execution(public * *.getStudentByFirstName(..))")
-	public void executeAroundAnyGetStudent(JoinPoint joinPoint) {
+	public void beforeAnyGetStudent(JoinPoint joinPoint) {
 		logger.info("log after getStudentByFirstName method  getStudentByFirstName");
+	}
+
+
+	@After("execution(public * *.delete(..))")
+	public void beforeDeleteStudent(JoinPoint joinPoint) {
+		logger.info("log after delete method in Student Service");
 	}
 
 }

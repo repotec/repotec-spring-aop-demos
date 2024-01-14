@@ -15,6 +15,9 @@ public class StudentService {
 	private StudentRepository studentRepository;
 	
 	public Student getStudentByFirstName(String firstName) {
+		if(firstName == null)
+			throw new RuntimeException("this is an exception");
+		
 		return studentRepository.getStudentByFirstName(firstName);
 	}
 	
@@ -22,9 +25,7 @@ public class StudentService {
 		return studentRepository.findAllStudents();
 	}
 
-	public void delete(Student student) {
-		if(student.getStudentId() == 0) {
-			throw new RuntimeException("couldn't found Student to be deleted!");
-		}
+	public void save(Student student){
+		studentRepository.save(student);
 	}
 }

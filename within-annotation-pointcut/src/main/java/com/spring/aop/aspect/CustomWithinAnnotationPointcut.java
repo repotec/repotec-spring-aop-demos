@@ -4,9 +4,7 @@ import java.util.logging.Logger;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.Around;
-import org.aspectj.lang.annotation.Aspect;
+import org.aspectj.lang.annotation.*;
 import org.springframework.stereotype.Component;
 import java.time.Duration;
 @Aspect
@@ -20,8 +18,8 @@ public class CustomWithinAnnotationPointcut {
 //    	
 //		logger.info("log any method has @Serice annoation " + joinPoint.getSignature().toLongString());
 //	}
-    
-    
+
+
     @Around("within(com.spring.aop.service.StudentService)")
     public Object logPerformance(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
     	logger.info("*************************");

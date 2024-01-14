@@ -35,7 +35,7 @@ public class CustomWithinPointcut {
 		logger.info("log before the all methods in interface that annotated with @Repository");
 	}
 
-	@Before("within(com.spring.aop.repository.StudentRepository+)")
+	@Before("within(com.spring.aop.repository.StudentRepository +)")
 	public void LogBeforeAllMethodsInClassesThatImplementGivenInterface() {
 		logger.info("log before the all methods/classes that implements the given interface");
 	}
