@@ -40,9 +40,15 @@
 		<module>around-advice</module>
 		<module>after-throwing-advice</module>
 		<module>after-returning-advice</module>
-		<module>within-annotation-pointcut</module>
-		<module>within-pointcut</module>
-		<module>target-pointcut</module>
-		<module>args-annotation-pointcut</module>
+
+		<module>target-annotation-pointcut-designator</module>
+		<module>within-annotation-pointcut-designator</module>
+		<module>args-annotation-pointcut-designator</module>
+
+
+		<module>within-pointcut-designator</module>
+		<module>args-pointcut-designator</module>
+		<module>thiss-pointcut-designator</module>
+		<module>target-pointcut-designator</module>
 	</modules>
 </project>

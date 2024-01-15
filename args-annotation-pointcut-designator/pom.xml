@@ -5,7 +5,7 @@
     <artifactId>spring-aop-demos</artifactId>
     <version>0.0.1</version>
   </parent>
-  <artifactId>after-advice</artifactId>
-  <name>after-advice</name>
-  <description>after-advice</description>
+  <artifactId>args-annotation-pointcut-designator</artifactId>
+  <name>args-annotation-pointcut-designator</name>
+  <description>args-annotation-pointcut-designator</description>
 </project>

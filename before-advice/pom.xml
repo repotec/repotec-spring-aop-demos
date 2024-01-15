@@ -6,4 +6,6 @@
     <version>0.0.1</version>
   </parent>
   <artifactId>before-advice</artifactId>
+  <name>before-advice</name>
+  <description>before-advice</description>
 </project>
