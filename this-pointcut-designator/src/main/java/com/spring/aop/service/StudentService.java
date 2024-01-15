@@ -1,12 +1,11 @@
 package com.spring.aop.service;
 
-import java.util.List;
-
+import com.spring.aop.model.Student;
+import com.spring.aop.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.spring.aop.model.Student;
-import com.spring.aop.repository.StudentRepository;
+import java.util.List;
 
 @Service
 public class StudentService {

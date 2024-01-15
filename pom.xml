@@ -48,7 +48,7 @@
 
 		<module>within-pointcut-designator</module>
 		<module>args-pointcut-designator</module>
-		<module>thiss-pointcut-designator</module>
+		<module>this-pointcut-designator</module>
 		<module>target-pointcut-designator</module>
-	</modules>
+    </modules>
 </project>

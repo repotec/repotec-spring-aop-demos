@@ -1,6 +1,9 @@
 package com.spring.aop.repository;
 
 import java.util.List;
+
+import org.springframework.stereotype.Component;
+
 import com.spring.aop.model.Student;
 import org.springframework.stereotype.Repository;
 

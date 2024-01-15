@@ -1,12 +1,11 @@
 package com.spring.aop.repository;
 
+import com.spring.aop.model.Student;
+import org.springframework.stereotype.Repository;
+
 import java.util.List;
 
-import org.springframework.stereotype.Component;
-
-import com.spring.aop.model.Student;
-
-@Component
+@Repository
 public interface StudentRepository {
 	List<Student> getAllStudent(String name);
 	Student getStudentByFirstName(String name);

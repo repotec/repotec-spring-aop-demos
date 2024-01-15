@@ -22,7 +22,6 @@ public class CustomWithinAnnotationPointcut {
 
     @Around("within(com.spring.aop.service.StudentService)")
     public Object logPerformance(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
-    	logger.info("*************************");
         long startTime = System.currentTimeMillis();
         try {
             return proceedingJoinPoint.proceed();

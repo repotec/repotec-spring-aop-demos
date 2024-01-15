@@ -1,8 +1,5 @@
 package com.spring.aop;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-
-import java.util.List;
 
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -15,7 +12,7 @@ import com.spring.aop.model.Student;
 import com.spring.aop.service.StudentService;
 
 @TestInstance(Lifecycle.PER_CLASS)
-public class ArgsAnnotationPointcutTest {
+public class ThisPointcutDesignatorTest {
 	AnnotationConfigApplicationContext context = null;
 	
 	@BeforeAll
@@ -30,7 +27,7 @@ public class ArgsAnnotationPointcutTest {
     }
 
 	@Test
-    public void BeforeAdviceAnyLogBeforeAnyArrayOfStudents_test() {
+    public void BeforeAnyMethodInStudentServiceClass_test() {
 		StudentService studentService = context.getBean("studentService", StudentService.class);
 		studentService.save(new Student(1,"test", "test", 20));
     }
